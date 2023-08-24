@@ -1,16 +1,38 @@
 import os
 import librosa
+import webview
 import subprocess
 import numpy as np
-from flask import Flask, jsonify
+from flask import Flask, request, jsonify, render_template
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world():
-    return "Hello World"
+app.config['UPLOAD_FOLDER'] = r'C:\Users\soham\Desktop\Coding\Project\New folder\Music_classifier'
 
-@app.route('/<string:str>')
+@app.route('/', methods=['GET', 'POST'])
+def index():
+    if request.method == 'POST':
+        if 'audio_file' not in request.files:
+            return "No audio file part"
+        
+        audio_file = request.files['audio_file']
+        
+        if audio_file.filename == '':
+            return "No selected file"
+        
+        if audio_file:
+            temp_file_path = os.path.join(app.config['UPLOAD_FOLDER'], audio_file.filename)
+            audio_file.save(temp_file_path)
+            output = main(temp_file_path)
+            return output
+    
+    return '''
+    <form method="POST" enctype="multipart/form-data">
+        <input type="file" name="audio_file">
+        <input type="submit" value="Upload">
+    </form>'''
+
+
 def main(str):
     print("Enter song path : ")
     # path = r"Laga Chunari Mein Daag.wav"
@@ -60,7 +82,7 @@ def main(str):
     
     therapy = healing_therapies(possible_thaat_list)
     
-    return jsonify(therapy)
+    return therapy
 
 
 
@@ -370,3 +392,4 @@ def main_2(y,sr):
 
 if __name__ == '__main__':
     app.run(debug=True)
+    #webview.start()
