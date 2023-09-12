@@ -38,21 +38,13 @@ def healing_therapies(thaat_list):
                       [4,14,19,20,21],
                       [4,5,18,22]]
     
-    therapy_number = []
+    therapy_number = set()
     for i in range(len(thaat)):
         if(thaat[i] in thaat_list):
             for j in therapy_choice[i]:
-                if(j not in therapy_number):
-                    therapy_number.append(j)
+                    therapy_number.add(therapy[j])
     
-    print()
-    print()
-    print("Possible therapies of the song : ")
-    
-    dict = {}
-    for i in range(len(therapy_number)):
-        print((i+1), end='. ')
-        print(therapy[therapy_number[i]])
-        dict[i+1] = therapy[therapy_number[i]]
-    print()
-    return dict
+   
+    return list(therapy_number)
+
+print(healing_therapies(["Bilawal"]))

@@ -2,8 +2,10 @@ import os
 import librosa
 import subprocess
 import numpy as np
+import json
 
 from helper.healing_therapies import healing_therapies
+from helper.playing_time import playing_time
 from main2 import main_2
 
 def main(str):
@@ -53,9 +55,17 @@ def main(str):
     
     print(possible_thaat_list)
     
+    
+    time=playing_time(possible_thaat_list)
     therapy = healing_therapies(possible_thaat_list)
     
-    return therapy
+    dict={"thaat":possible_thaat_list,
+          "time":time,
+          "therapy":therapy,}
+    
+    final=json.dumps(dict)
+
+    return final
 
 
 
