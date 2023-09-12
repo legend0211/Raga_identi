@@ -6,7 +6,7 @@ from main import main
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = r'assets'
 
-@app.route('/test',methods='GET')
+@app.route('/test',methods=['GET'])
 def hello():
     return "Fine"
 @app.route('/', methods=['GET', 'POST'])
