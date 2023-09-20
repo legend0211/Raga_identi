@@ -12,11 +12,11 @@ def main(str):
     #print("Enter song path : ")
     # path = r"Laga Chunari Mein Daag.wav"
     path = str
-    try:
-        os.remove('res.wav')
-    except:
-        """"""
-    subprocess.call(['ffmpeg', '-i', path, 'res.wav'])
+    # try:
+    #     os.remove('res.wav')
+    # except:
+    #     """"""
+    #     subprocess.call(['ffmpeg', '-i', path, 'res.wav'])
     y, sr = librosa.load(path, sr=22050, mono=True)
     print(len(y))
     
@@ -42,9 +42,6 @@ def main(str):
         for i in obt_thaat:
             obtained_thaat.append(i)
         
-    print()
-    print()
-    print()
     for i in obtained_thaat:
         if(i in possible_thaat_list):
             idx = possible_thaat_list.index(i)
