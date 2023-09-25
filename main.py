@@ -12,11 +12,7 @@ def main(str):
     #print("Enter song path : ")
     # path = r"Laga Chunari Mein Daag.wav"
     path = str
-    # try:
-    #     os.remove('res.wav')
-    # except:
-    #     """"""
-    #     subprocess.call(['ffmpeg', '-i', path, 'res.wav'])
+    #subprocess.call(['ffmpeg', '-i', path, 'res.wav'])
     y, sr = librosa.load(path, sr=22050, mono=True)
     print(len(y))
     

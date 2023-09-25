@@ -20,4 +20,4 @@ def playing_time(thaat_list):
   return list(time)
 
 
-print(playing_time(["Marva","Bhairav"]))#test
+#print(playing_time(["Marva","Bhairav"]))#test

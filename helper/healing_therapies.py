@@ -33,4 +33,4 @@ def healing_therapies(thaat_list):
    
     return list(therapy_number)
 
-print(healing_therapies(["Bilawal","Poorvi","Marva","Asavari"]))#test
+#print(healing_therapies(["Bilawal","Poorvi","Marva","Asavari"]))#test
