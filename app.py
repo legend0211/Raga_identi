@@ -1,6 +1,7 @@
 import os
 from flask import Flask, request
-
+import time
+# song id, song name, thaat name, playing time, Healing Therapies 
 from main import main
 
 app = Flask(__name__)
@@ -12,6 +13,7 @@ def hello():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == 'POST':
+        start_time=time.time()
         if 'audio_file' not in request.files:
             return "No audio file part"
         
@@ -25,6 +27,8 @@ def index():
             audio_file.save(temp_file_path)
             output = main(temp_file_path)
             os.remove(temp_file_path)
+            end_time=time.time()
+            print(f"Time: {end_time-start_time}")
             return output
     
     return '''
