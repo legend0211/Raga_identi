@@ -10,8 +10,10 @@ app.config['UPLOAD_FOLDER'] = r'assets'
 @app.route('/test',methods=['GET'])
 def hello():
     return "Fine"
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
+    print(request)
     if request.method == 'POST':
         start_time=time.time()
         if 'audio_file' not in request.files:
@@ -40,4 +42,4 @@ def index():
 
 if __name__ == '__main__':
     app.debug=True
-    app.run()
+    app.run(host="0.0.0.0")

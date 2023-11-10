@@ -1,50 +1,16 @@
-thaats = ["Bilawal", "Kalyan", "Khamaj", "Kafi", "Asavari", "Todi", "Poorvi", "Marva", "Bhairavi", "Bhairav"]
+import requests
 
-therapy = ["Gives healthy mind and body",
-            "Control sound and sonorous sleep",
-            "Reduce mental tension",
-            "Relief from headache",
-            "Relief from cough and cold",
-            "Relief from problems of high blood pressure",
-            "Can cure Rheumatic Arthritis",
-            "Relief from asthma",
-            "Prevents hysteria",
-            "Brings joy",
-            "Mitigate insomina",
-            "Reduces anxiety",
-            "Reduces hypertension",
-            "Brings Creativity and Happiness",
-            "Cure low blood pressure",
-            "Control psychological hazards and builds confidence",
-            "Used for constipation",
-            "Brings serenity",
-            "Enhances compassion and patience",
-            "Relief from High fever",
-            "Relief from phlegm, toothache, intestinal gas, sinusitis",
-            "It can be used for Emotional strength, Devotion and Peace, Restful Sleep, Tranquility, Relaxation & Rest",
-            "Peace Integration"]
+# Replace this URL with the actual URL where your API is hosted
+api_url = 'http://192.168.214.150:5000'
 
-therapy_choice = [[1,2],
-                  [3,4,5,6,7],
-                  [2,3,8,9],
-                  [1,10,11,12,13],
-                  [3,13,14,15,16,17],
-                  [3,4,5,9,12,18],
-                  [3,11],
-                  [1,9,19],
-                  [4,14,19,20,21],
-                  [4,5,18,22]]
+# Replace this file path with the path to your audio file
+audio_file_path = '/home/rohan/SongFolder/song1.mpeg'
 
+# Prepare the file to be sent
+files = {'file': open(audio_file_path, 'rb')}
 
+# Make the POST request to the API
+response = requests.post(api_url, files=files)
 
-
-info={}
-
-for i in range(len(thaats)):
-  thaat=thaats[i]
-  info[thaat]=[]
-  for idx in therapy_choice[i]:
-    info[thaat].append(therapy[idx-1])
-
-print(info)
-  
+# Print the response from the API
+print(response.json())

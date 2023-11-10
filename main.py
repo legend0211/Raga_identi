@@ -57,6 +57,7 @@ def main(str):
     for i in range(1,len(possible_thaat_tuple)):
         if(possible_thaat_tuple[i-1][1]==possible_thaat_tuple[i][1]):
             possible_thaat_list.append(possible_thaat_tuple[i][0])
+        else: break
 
 
     print(possible_thaat_list)
