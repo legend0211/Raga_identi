@@ -5,7 +5,7 @@ import numpy as np
 import json
 from collections import Counter
 
-
+from helper.string_parser import string_parser
 from helper.healing_therapies import healing_therapies
 from helper.playing_time import playing_time
 from main2 import main_2
@@ -75,7 +75,8 @@ def main(str):
           "time":time,
           "therapy":therapy,}
     
-    final=json.dumps(dict)
+    # final=json.dumps(dict)
+    final=string_parser(dict)
 
     return final
 
