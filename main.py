@@ -50,9 +50,16 @@ def main(str):
     #         thaat_count.append(1)
     
     # print(possible_thaat_list,thaat_count)
+    print(end='\n')
+    print(end='\n')
+    print(end='\n')
+
+    #print(obtained_thaat)
 
     counter_thaat=Counter(obtained_thaat)
-    possible_thaat_tuple=counter_thaat.most_common(3)
+    possible_thaat_tuple=counter_thaat.most_common()
+    print(possible_thaat_tuple)
+    
     possible_thaat_list.append(possible_thaat_tuple[0][0])
     for i in range(1,len(possible_thaat_tuple)):
         if(possible_thaat_tuple[i-1][1]==possible_thaat_tuple[i][1]):
