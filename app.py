@@ -31,7 +31,7 @@ def index():
             os.remove(temp_file_path)
             end_time=time.time()
             print(f"Time: {end_time-start_time}")
-            print(len(output))
+            print(type(output))
             print(output)
             return output
     
