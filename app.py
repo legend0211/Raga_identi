@@ -1,3 +1,4 @@
+import json
 import os
 from flask import Flask, request
 import time
@@ -30,7 +31,7 @@ def index():
             os.remove(temp_file_path)
             end_time=time.time()
             print(f"Time: {end_time-start_time}")
-            print(type(output))
+            print(len(output))
             print(output)
             return output
     

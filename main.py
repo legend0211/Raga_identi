@@ -75,8 +75,8 @@ def main(str):
           "time":time,
           "therapy":therapy,}
     
-    # final=json.dumps(dict)
-    final=string_parser(dict)
+    final=json.dumps(dict)
+    # final=string_parser(dict)
 
     return final
 

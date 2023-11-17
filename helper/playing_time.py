@@ -1,6 +1,6 @@
 
 def playing_time(thaat_list):
-  info={"Bilwal":["Anytime"],
+  info={"Bilawal":["Anytime"],
         "Kalyan":["Anytime"],
         "Khamaj":["Afternoon","Evening"],
         "Kafi":["Anytime"],
