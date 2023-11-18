@@ -28,7 +28,10 @@ def index():
             temp_file_path = os.path.join(app.config['UPLOAD_FOLDER'], audio_file.filename)
             audio_file.save(temp_file_path)
             output = main(temp_file_path)
-            os.remove(temp_file_path)
+            try:
+                os.remove(temp_file_path)
+            except:
+                """"""
             end_time=time.time()
             print(f"Time: {end_time-start_time}")
             print(type(output))
