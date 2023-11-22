@@ -1,11 +1,13 @@
 import json
 import os
 from flask import Flask, request
+from flask_cors import CORS
 import time
 # song id, song name, thaat name, playing time, Healing Therapies 
 from main import main
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = r'assets'
 
 @app.route('/test',methods=['GET'])
