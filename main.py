@@ -66,7 +66,7 @@ def main(str):
             possible_thaat_list.append(possible_thaat_tuple[i][0])
         else: break
 
-    if len(possible_thaat_list)>=4: possible_thaat_list=["Mixed Thhat"]
+    if len(possible_thaat_list)>=3: possible_thaat_list=["Mixed Thhat"]
 
     print(possible_thaat_list)
     time=playing_time(possible_thaat_list)
