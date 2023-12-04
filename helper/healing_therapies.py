@@ -22,7 +22,7 @@ def healing_therapies(thaat_list):
                        'Relief from phlegm, toothache, intestinal gas, sinusitis'], 
           'Bhairav': ['Relief from headache', 'Relief from cough and cold', 'Brings serenity', 
                       'It can be used for Emotional strength, Devotion and Peace, Restful Sleep, Tranquility, Relaxation & Rest'],
-          'Mixed Thhat':['Not Applicable'],}
+          'Mixed Thaat':['Not Applicable'],}
     
     
     therapy_number = set()

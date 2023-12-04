@@ -10,7 +10,7 @@ def playing_time(thaat_list):
         "Marva":["Morning","Night"],
         "Bhairavi":["Anytime"],
         "Bhairav":["Morning","Afternoon"],
-        "Mixed Thhat":["Anytime"]}
+        "Mixed Thaat":["Anytime"]}
   
   time=set()
 
