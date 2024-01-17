@@ -58,15 +58,23 @@ def main(str):
 
     counter_thaat=Counter(obtained_thaat)
     possible_thaat_tuple=counter_thaat.most_common()
-    print(possible_thaat_tuple)
+    print("Possible thaat tuple :",possible_thaat_tuple)
     
-    possible_thaat_list.append(possible_thaat_tuple[0][0])
-    for i in range(1,len(possible_thaat_tuple)):
-        if(possible_thaat_tuple[i-1][1]==possible_thaat_tuple[i][1]):
-            possible_thaat_list.append(possible_thaat_tuple[i][0])
-        else: break
+    tc = 0
+    for i in possible_thaat_tuple:
+        tc = tc+i[1]
+    
+    if((possible_thaat_tuple[0][1]*100/tc)>=50):
+        possible_thaat_list.append(possible_thaat_tuple[0][0])
+    else:
+        possible_thaat_list=["Mixed Thaat"]
+        
+    # for i in range(1,len(possible_thaat_tuple)):
+    #     if(possible_thaat_tuple[i-1][1]==possible_thaat_tuple[i][1]):
+    #         possible_thaat_list.append(possible_thaat_tuple[i][0])
+    #     else: break
 
-    if len(possible_thaat_list)>=3: possible_thaat_list=["Mixed Thaat"]
+    # if len(possible_thaat_list)>=3: possible_thaat_list=["Mixed Thaat"]
 
     print(possible_thaat_list)
     time=playing_time(possible_thaat_list)
