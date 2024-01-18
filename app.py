@@ -17,22 +17,22 @@ def hello():
 @app.route('/link',methods=['GET','POST'])
 def index2():
     if request.method == 'POST':
-        start_time=time.time()
-        link=request.json.get('link')
-        song_path="assets/song.mp3"
+        start_time = time.time()
+        link = request.form.get("link")
+        song_path = "assets/song.mp3"
 
-        response=requests.get(link)
+        response = requests.get(link)
 
-        if response.status_code==200:
-            with open(song_path,'wb') as file:
+        if response.status_code == 200:
+            with open(song_path, 'wb') as file:
                 file.write(response.content)
-            output=main(song_path)
+            output = main(song_path)
             try:
                 os.remove(song_path)
             except:
                 """"""
-            end_time=time.time()
-            print(f"Time: {end_time-start_time}")
+            end_time = time.time()
+            print(f"Time: {end_time - start_time}")
             print(type(output))
             print(output)
             return output
@@ -40,11 +40,11 @@ def index2():
             print(f"Failed to download the song. Status Code: {response.status_code}")
 
     return '''
-    <form method="POST" enctype="multipart/form-data">
-        <input type="file" name="audio_file">
-        <input type="submit" value="Upload">
+    <form method="POST">
+        <label for="link">Enter the song link:</label>
+        <input type="text" name="link" id="link" required>
+        <input type="submit" value="Submit">
     </form>'''
-
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

@@ -64,7 +64,7 @@ def main(str):
     for i in possible_thaat_tuple:
         tc = tc+i[1]
     
-    if((possible_thaat_tuple[0][1]*100/tc)>=50):
+    if((possible_thaat_tuple[0][1]*100/tc)>50):
         possible_thaat_list.append(possible_thaat_tuple[0][0])
     else:
         possible_thaat_list=["Mixed Thaat"]
